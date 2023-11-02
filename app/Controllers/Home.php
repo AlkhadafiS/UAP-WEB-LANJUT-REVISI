@@ -9,4 +9,9 @@ class Home extends BaseController
         return view('loginpage');
     }
 
+    public function password(): string
+    {
+        return view('login_as');
+    }
+
 }
