@@ -6,6 +6,7 @@ class Home extends BaseController
 {
     public function index()
     {
+
         $data = [
             'judul' => 'Homepage'
         ];
@@ -16,4 +17,13 @@ class Home extends BaseController
         echo view('home/index');
         echo view('templates/v_footer');
     }
+  public function index(){
+    return view('loginpage');
+  }
+
+    public function password(): string
+    {
+        return view('login_as');
+    }
+
 }
