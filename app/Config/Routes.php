@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
+
 #ADMIN_GUDANG
 $routes->get('/barang/(:any)/(:any)/(:any)/(:any)', 'BarangController::barang/$1/$2/$3/$4');
 #create
@@ -22,3 +23,5 @@ $routes->get('/penjualan/add', 'KasirController::add');
 $routes->post('/penjualan/store', 'KasirController::store');
 #table
 $routes->get('/penjualan/table', 'KasirController::table');
+
+$routes->get('/login', 'Home::password');
