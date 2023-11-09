@@ -17,7 +17,7 @@ class Home extends BaseController
         echo view('home/index');
         echo view('templates/v_footer');
     }
-  public function index(){
+  public function login(){
     return view('loginpage');
   }
 

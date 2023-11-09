@@ -209,49 +209,26 @@
                     <h1 class="h3 mb-0 text-gray-800">Dashboard Jenis Barang</h1>
                 </div>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <form action="<?= base_url('/barang/add') ?>" method="get">
-                                <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i></button>
-                            </form>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">No</th>
-                                        <th scope="col">Jenis Barang</th>
-                                        <th scope="col">Merk</th>
-                                        <th scope="col">Unit</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Minyak Makan</td>
-                                        <td>Sania</td>
-                                        <td>20</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Sabun Mesin Cuci</td>
-                                        <td>Rinso</td>
-                                        <td>123</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
-                                            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                <div class="container-fluid" style="display: flex; justify-content: center; align-items: center;">
+                    <br>
+                    <form action="<?= base_url('/barang/store') ?>" method="POST">
+                        <!-- <label>Nama Barang:</label>
+        <input type="text" name="nama_barang" id="nama_barang" required> -->
+
+                        <div class="mb-3" style="width:850px;">
+                            <label for="exampleInputEmail1" class="form-label">Jenis Barang</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="jenis_barang" id="jenis_barang">
                         </div>
-                    </div>
+
+                        <div class="mb-3" style="width:850px;">
+                            <label for="exampleInputEmail1" class="form-label">Unit</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="jumlah_unit" id="jumlah_unit">
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3">Simpan</button>
+                        </div>
+                    </form>
                 </div>
 
 

@@ -212,7 +212,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <form action="<?= base_url('/barang/add') ?>" method="get">
+                            <form action="<?= base_url('jenis/add') ?>" method="get">
                                 <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i></button>
                             </form>
                             <table class="table table-bordered">
@@ -220,7 +220,6 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Jenis Barang</th>
-                                        <th scope="col">Merk</th>
                                         <th scope="col">Unit</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -229,7 +228,6 @@
                                     <tr>
                                         <th scope="row">1</th>
                                         <td>Minyak Makan</td>
-                                        <td>Sania</td>
                                         <td>20</td>
                                         <td>
                                             <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
@@ -240,7 +238,6 @@
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>Sabun Mesin Cuci</td>
-                                        <td>Rinso</td>
                                         <td>123</td>
                                         <td>
                                             <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
