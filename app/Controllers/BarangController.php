@@ -23,7 +23,15 @@ class BarangController extends BaseController
     }
 
     public function add() {
-        return view('add_barang');
+        $data = [
+            'judul' => 'Tambah Barang'
+        ];
+
+        echo view('templates/v_header', $data);
+        echo view('templates/v_sidebar');
+        echo view('Views/add_barang');
+        echo view('home/index');
+        echo view('templates/v_footer');
     }
 
     public function store() {
@@ -38,6 +46,38 @@ class BarangController extends BaseController
     
 
     public function table() {
-        return view('list_barang');
+        $data = [
+            'judul' => 'Barang'
+        ];
+
+        echo view('templates/v_header', $data);
+        echo view('templates/v_sidebar');
+        echo view('Views/list_barang');
+        echo view('home/index');
+        echo view('templates/v_footer');
+    }
+
+    public function jenis() {
+        $data = [
+            'judul' => 'Jenis Barang'
+        ];
+
+        echo view('templates/v_header', $data);
+        echo view('templates/v_sidebar');
+        echo view('Views/list_jenis');
+        echo view('home/index');
+        echo view('templates/v_footer');
+    }
+
+    public function add_jenis() {
+        $data = [
+            'judul' => 'Tambah Jenis Barang'
+        ];
+
+        echo view('templates/v_header', $data);
+        echo view('templates/v_sidebar');
+        echo view('Views/add_jenis');
+        echo view('home/index');
+        echo view('templates/v_footer'); 
     }
 }

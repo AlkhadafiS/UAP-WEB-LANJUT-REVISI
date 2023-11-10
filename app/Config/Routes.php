@@ -24,4 +24,8 @@ $routes->post('/penjualan/store', 'KasirController::store');
 #table
 $routes->get('/penjualan/table', 'KasirController::table');
 
-$routes->get('/login', 'Home::password');
+#JENIS BARANG
+$routes->get('/jenis', 'BarangController::jenis');
+$routes->get('/jenis/add', 'BarangController::add_jenis');
+
+$routes->get('/login', 'Home::index1');

@@ -23,7 +23,15 @@ class KasirController extends BaseController
     // }
 
     public function add() {
-        return view('add_penjualan');
+        $data = [
+            'judul' => 'Tambah Barang'
+        ];
+
+        echo view('templates/v_header', $data);
+        echo view('templates/v_sidebar');
+        echo view('Views/add_penjualan');
+        echo view('home/index');
+        echo view('templates/v_footer');
     }
 
     public function store() {
@@ -38,6 +46,14 @@ class KasirController extends BaseController
     }
 
     public function table() {
-        return view('list_penjualan');
+        $data = [
+            'judul' => 'Penjualan'
+        ];
+
+        echo view('templates/v_header', $data);
+        echo view('templates/v_sidebar');
+        echo view('Views/list_penjualan');
+        echo view('home/index');
+        echo view('templates/v_footer');
     }
 }
