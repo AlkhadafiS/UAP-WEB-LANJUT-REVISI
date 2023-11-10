@@ -216,6 +216,11 @@
     <h1 class="h3 mb-0 text-gray-800">Dashboard Admin Gudang</h1>
 </div>
 
+    <form action="<?= base_url('/barang/add') ?>" method="get">
+        <button type="submit" class="btn btn-primary btn-sm">Tambah Barang</button>
+    </form>
+    <br>
+
 <div class="container">
   <div class="row">
     <div class="col-12">
@@ -255,7 +260,7 @@
           <tr>
             <th scope="row">3</th>
             <td>Tepung Terigu</td>
-            <td>Rosebrand</td>
+            <td>Unilever</td>
             <td>26</td>
             <td>
               <button type="button" class="btn btn-primary"><i class="far fa-eye"></i></button>
