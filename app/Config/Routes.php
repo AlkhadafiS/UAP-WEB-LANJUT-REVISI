@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/db', 'Home::index');
 
 
 #ADMIN_GUDANG
@@ -28,4 +28,4 @@ $routes->get('/penjualan/table', 'KasirController::table');
 $routes->get('/jenis', 'BarangController::jenis');
 $routes->get('/jenis/add', 'BarangController::add_jenis');
 
-$routes->get('/login', 'Home::login');
+$routes->get('/login', 'Home::index1');
