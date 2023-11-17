@@ -3,6 +3,7 @@
 <?= $this->section('content') ?>
 
 
+
 <!-- judul -->
 <div class="container">
 <style>
@@ -64,7 +65,8 @@
             }
             ?>
         </tbody>
+
     </table>
-    </div>
+  </div>
 </div>
 <?= $this->endSection() ?>

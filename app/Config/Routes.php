@@ -48,3 +48,15 @@ $routes->get('/user4/(:any)/edit', [KasirController::class, 'edit']);
 $routes->put('/user4/(:any)', [KasirController::class, 'update']);
 $routes->delete('user4/(:any)', [KasirController::class, 'destroy']);
 
+$routes->get('/transaksi', 'AdminGudangController::transaksi');
+$routes->get('/create/transaksi', 'AdminGudangController::create_transaksi');
+$routes->post('/user3/store_transaksi', 'AdminGudangController::store_transaksi');
+// $routes->get('/transaksi/edit/(:any)', 'AdminGudangController::editTransaksi');
+//$routes->get('/transaksi/edit/(:any)', [AdminGudangController::class, 'editTransaksi']);
+//$routes->put('/transaksi/(:any)', 'AdminGudangController::updateTransaksi');
+//$routes->put('/transaksi/(:any)', [AdminGudangController::class, 'updateTransaksi']);
+//$routes->put('/transaksi/(:any)', [AdminGudangController::class, 'updateTransaksi']);
+$routes->delete('transaksi/(:any)', [AdminGudangController::class, 'destroyTransaksi']);
+$routes->get('/transaksi/edit/(:any)', 'AdminGudangController::editTransaksi/$1');
+$routes->put('/transaksi/(:any)', 'AdminGudangController::updateTransaksi/$1');
+
