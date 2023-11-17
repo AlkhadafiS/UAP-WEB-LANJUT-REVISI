@@ -2050,6 +2050,7 @@
         },
         {
             "name": "symfony/deprecation-contracts",
+
             "version": "v3.4.0",
             "source": {
                 "type": "git",
@@ -2097,6 +2098,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
+
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v3.4.0"
             },
             "funding": [

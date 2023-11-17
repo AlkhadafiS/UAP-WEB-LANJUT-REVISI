@@ -1,13 +1,22 @@
 <?= $this->extend('layouts/app') ?>
 <?= $this->section('content') ?>
+
 <nav class="navbar bg-body-tertiary">
+<style>
+    .container {
+      background-color: #fff; /* Set background color to white */
+      padding: 20px; /* Add some padding for better visual appearance */
+      margin-top: 20px; /* Add margin from the top */
+      border-radius: 8px; /* Add rounded corners for a softer appearance */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    }
+    
+  </style>
     <!-- navbar -->
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      UAP Web lanjut
-    </a>    
+  <div class="container-fluid">   
+  <h3>Form Edit Barang</h3>
   </div>
-</nav><br>
+</nav>
 <div class="container">
     <form class="container" action=<?= base_url('user3/' . $barang['id']) ?> method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_method" value="PUT">
