@@ -47,10 +47,15 @@ class BarangModel extends Model
     {
         if ($id != null) {
             return $this->select('barang.*, jenis.nama_jenis')
-            ->join('jenis', 'jenis.id=barang.id_jenis')->find($id);
+                ->join('jenis', 'jenis.id=barang.id_jenis')->find($id);
         }
         return $this->select('barang.*, jenis.nama_jenis')
-        ->join('jenis', 'jenis.id=barang.id_jenis')->findAll();
+            ->join('jenis', 'jenis.id=barang.id_jenis')->findAll();
+    }
+
+    public function getBarangByMerkAndJenis($namaMerk, $idJenis)
+    {
+        return $this->select('*')->where(['nama_merk' => $namaMerk, 'id_jenis' => $idJenis])->first();
     }
 
     public function updateBarang($data, $id)
