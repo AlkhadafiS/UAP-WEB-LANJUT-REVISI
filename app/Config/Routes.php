@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\KasirController;
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\SuperAdminController;
 use App\Controllers\AdminGudangController;
@@ -51,12 +52,15 @@ $routes->delete('user4/(:any)', [KasirController::class, 'destroy']);
 $routes->get('/transaksi', 'AdminGudangController::transaksi');
 $routes->get('/create/transaksi', 'AdminGudangController::create_transaksi');
 $routes->post('/user3/store_transaksi', 'AdminGudangController::store_transaksi');
-// $routes->get('/transaksi/edit/(:any)', 'AdminGudangController::editTransaksi');
-//$routes->get('/transaksi/edit/(:any)', [AdminGudangController::class, 'editTransaksi']);
-//$routes->put('/transaksi/(:any)', 'AdminGudangController::updateTransaksi');
-//$routes->put('/transaksi/(:any)', [AdminGudangController::class, 'updateTransaksi']);
-//$routes->put('/transaksi/(:any)', [AdminGudangController::class, 'updateTransaksi']);
 $routes->delete('transaksi/(:any)', [AdminGudangController::class, 'destroyTransaksi']);
 $routes->get('/transaksi/edit/(:any)', 'AdminGudangController::editTransaksi/$1');
 $routes->put('/transaksi/(:any)', 'AdminGudangController::updateTransaksi/$1');
 
+$routes->get('/keluar', 'KasirController::keluar');
+$routes->get('/create/keluar', 'KasirController::create_keluar');
+$routes->post('/user4/store_keluar', 'KasirController::store_keluar');
+$routes->delete('keluar/(:any)', [KasirController::class, 'destroyKeluar']);
+$routes->get('/keluar/edit/(:any)', 'KasirController::editkeluar/$1');
+#$routes->put('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
+$routes->post('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
+$routes->put('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
