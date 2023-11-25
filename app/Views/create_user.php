@@ -39,7 +39,7 @@
             </div>
         </div>
         <input type="submit" name="tambah_data" value="Tambah Data" class="btn btn-primary">
-        <a href="/user1" class="btn btn-danger">Kembali</a>
+        <a href="/1" class="btn btn-danger">Kembali</a>
     </form>
 </div>
 <?= $this->endSection() ?>

@@ -1,5 +1,7 @@
-<?= $this->extend('layouts/app') ?>
-<?= $this->section('content') ?>
+<?= $this->extend('templates/index_ag'); ?>
+
+<?= $this->section('page-content'); ?>
+
 <nav class="navbar bg-body-tertiary">
     <!-- navbar -->
   <div class="container-fluid">
@@ -39,7 +41,7 @@
             </div>
         </div>
         <input type="submit" name="tambah_data" value="Tambah Data" class="btn btn-primary">
-        <a href="/user3" class="btn btn-danger">Kembali</a>
+        <a href="/3" class="btn btn-danger">Kembali</a>
     </form>
 </div>
 <?= $this->endSection() ?>
