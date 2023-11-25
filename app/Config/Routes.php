@@ -61,6 +61,5 @@ $routes->get('/create/keluar', 'KasirController::create_keluar');
 $routes->post('/user4/store_keluar', 'KasirController::store_keluar');
 $routes->delete('keluar/(:any)', [KasirController::class, 'destroyKeluar']);
 $routes->get('/keluar/edit/(:any)', 'KasirController::editkeluar/$1');
-#$routes->put('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
-$routes->post('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
 $routes->put('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
+$routes->post('/keluar/updatekeluar/(:num)', 'KasirController::updateKeluar/$1');
