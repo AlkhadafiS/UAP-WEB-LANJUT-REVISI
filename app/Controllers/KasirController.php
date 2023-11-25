@@ -270,18 +270,24 @@ class KasirController extends BaseController
         }
 
         // Proses update data
-        $model = new BarangModel();
+        $model = new KeluarModel();
         $data = [
             'id_jenis' => $this->request->getPost('jenis'),
             'tanggalk' => $this->request->getPost('tanggalk'),
             'nama_merk' => $this->request->getPost('nama_merk'),
             'keluar' => $this->request->getPost('keluar'),
         ];
-        $model->update($id, $data);
+
+        // dd($data); // Add this line to debug
+
+        $result = $model->updateKeluar($id, $data);
+
+        // dd($result); // Add this line to debug
 
         // Redirect ke halaman list_keluar.php dengan pesan sukses
         return redirect()->to('/keluar')->with('success', 'Data berhasil diperbarui');
     }
+
     public function destroykeluar($id)
     {
         $result = $this->keluarModel->deletekeluar($id);
