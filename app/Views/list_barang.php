@@ -18,7 +18,7 @@
     <table class="table align-middle">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>No</th>
           <th>Jenis</th>
           <th>Merk</th>
           <th>Stok</th>
