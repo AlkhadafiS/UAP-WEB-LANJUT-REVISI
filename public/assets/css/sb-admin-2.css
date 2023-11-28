@@ -47,7 +47,6 @@
   box-sizing: border-box;
 }
 
-
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -67,7 +66,7 @@ body {
   line-height: 1.5;
   color: #858796;
   text-align: left;
-  background-color: #fffffff6;
+  background-color: #fff;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {

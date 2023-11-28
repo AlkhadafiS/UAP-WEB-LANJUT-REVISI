@@ -12,7 +12,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
+     <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"rel="stylesheet">
     <link href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
 
     <!-- Custom fonts for this template-->
@@ -20,7 +21,7 @@
 
     <!-- Custom styles for this template-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-
+    <script src="<?=base_url('assets/vendor/jquery-easing/jquery.easing.min.js'); ?>"></script>
 </head>
 
 
@@ -36,7 +37,7 @@
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('assets/index.html')?>">
     <div class="sidebar-brand-icon rotate-n-15">
     </div>
-    <div class="sidebar-brand-text mx-3">INDOAPRIL<sup></sup></div>
+    <div class="sidebar-brand-text mx-3">INDOMARET<sup></sup></div>
 </a>
 
 <!-- Divider -->
@@ -44,7 +45,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-    <a class="nav-link" href="<?= base_url('/db')?>">
+    <a class="nav-link" href="<?= base_url('/user4')?>">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
 </li>
@@ -61,13 +62,10 @@
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 
-<!-- Sidebar Message -->
-<div class="sidebar-card d-none d-lg-flex">
-    <img class="sidebar-card-illustration mb-2" src="/assets/img/undraw_rocket.svg" alt="...">
-    <p class="text-center mb-2"><strong>IndoAprilWeb</strong> is packed with premium features, components, and more!</p>
-    <a class="btn btn-success btn-sm" href="/assets/https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+<!-- Sidebar Toggler (Sidebar) -->
+<div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
 </div>
-
 </ul>
 <!-- End of Sidebar -->
 
@@ -156,19 +154,8 @@
                             </div>
                         </div>
                         <div>
-                            <div class="small text-gray-500">December 12, 2019</div>
-                            <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                            <div class="icon-circle bg-success">
-                                <i class="fas fa-donate text-white"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="small text-gray-500">December 7, 2019</div>
-                            $290.29 has been deposited into your account!
+                            <div class="small text-gray-500">November 12, 2023</div>
+                            <span class="font-weight-bold">Laporan baru siap dicetak!</span>
                         </div>
                     </a>
                     <a class="dropdown-item d-flex align-items-center" href="#">
@@ -178,8 +165,8 @@
                             </div>
                         </div>
                         <div>
-                            <div class="small text-gray-500">December 2, 2019</div>
-                            Spending Alert: We've noticed unusually high spending for your account.
+                            <div class="small text-gray-500">November 7, 2023</div>
+                            Spending Alert: Stok Barang digudang baru ditambahkan.
                         </div>
                     </a>
                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
@@ -207,48 +194,10 @@
                             <div class="status-indicator bg-success"></div>
                         </div>
                         <div class="font-weight-bold">
-                            <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                problem I've been having.</div>
-                            <div class="small text-gray-500">Emily Fowler · 58m</div>
+                            <div class="text-truncate">Hi Admin! Welcome to Dashboard.</div>
+                            <div class="small text-gray-500">Admin · 58m</div>
                         </div>
                     </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="assets/img/undraw_profile_2.svg"
-                                alt="...">
-                            <div class="status-indicator"></div>
-                        </div>
-                        <div>
-                            <div class="text-truncate">I have the photos that you ordered last month, how
-                                would you like them sent to you?</div>
-                            <div class="small text-gray-500">Jae Chun · 1d</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="assets/img/undraw_profile_3.svg"
-                                alt="...">
-                            <div class="status-indicator bg-warning"></div>
-                        </div>
-                        <div>
-                            <div class="text-truncate">Last month's report looks great, I am very happy with
-                                the progress so far, keep up the good work!</div>
-                            <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="assets/https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                alt="...">
-                            <div class="status-indicator bg-success"></div>
-                        </div>
-                        <div>
-                            <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                told me that people say this to all dogs, even if they aren't good...</div>
-                            <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                 </div>
             </li>
 
@@ -258,27 +207,15 @@
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-black-600 small">Admin Gudang</span>
+                    <span class="mr-2 d-none d-lg-inline text-black-600 small">User</span>
                     <img class="assets/img-profile rounded-circle"
-                        src="<?= base_url('sb2/img/undraw_profile.svg')?>">
+                        src="<?= base_url('assets/sb2/img/undraw_profile.svg')?>">
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                     aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Profile
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Settings
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Activity Log
-                    </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <a class="dropdown-item" href="<?= base_url('/0')?>">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>
@@ -287,10 +224,33 @@
 
         </ul>
     </nav>
-    
     <?= $this->renderSection('content')?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </div>
+        <!-- Bootstrap core JavaScript-->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/chart.js/Chart.min.js"></script>
 </div>
 </div>
+</div>
+<footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
 </body>
+
+
+
+
+

@@ -62,7 +62,7 @@
                 while ($row = $result->fetch_assoc()) {
                     $id = $row["id"];
                     $nama_user = $row["nama_user"];
-                    echo '<li><a class="dropdown-item" href="' . base_url('/') . $id . '">' . $nama_user . '</a></li>';
+                    echo '<li><a class="dropdown-item" href="' . base_url('/0') . $id . '">' . $nama_user . '</a></li>';
                 }
             } else {
                 echo "No users found in the database.";

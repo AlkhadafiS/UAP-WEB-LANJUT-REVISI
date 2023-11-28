@@ -7,11 +7,11 @@ use App\Controllers\AdminGudangController;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/1', 'SuperAdminController::index');
-$routes->get('/2', 'Home::Dashboard2');
-$routes->get('/3', 'AdminGudangController::index');
-$routes->get('/4', 'KasirController::index');
+$routes->get('/0', 'Home::index');
+$routes->get('/01', 'SuperAdminController::index');
+$routes->get('/02', 'Home::Dashboard2');
+$routes->get('/03', 'AdminGudangController::index');
+$routes->get('/04', 'KasirController::index');
 
 $routes->get('/user1/profile/(:any)/(:any)/(:any)', 'SuperAdminController::profile/$1/$2/$3');
 

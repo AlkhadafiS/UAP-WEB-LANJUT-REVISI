@@ -44,7 +44,9 @@ abstract class BaseController extends Controller
     // protected $session;
 
     /**
-     * @return void
+     * @param RequestInterface  $request
+     * @param ResponseInterface $response
+     * @param LoggerInterface   $logger
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
