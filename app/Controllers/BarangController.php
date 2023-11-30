@@ -77,7 +77,7 @@ class BarangController extends BaseController
         echo view('templates/v_header', $data);
         echo view('templates/v_sidebar');
         echo view('Views/add_jenis');
-        echo view('home/index');
-        echo view('templates/v_footer'); 
+       // echo view('home/index');
+        //echo view('templates/v_footer');
     }
 }
