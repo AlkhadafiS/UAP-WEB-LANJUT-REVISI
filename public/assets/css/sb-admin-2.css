@@ -9900,7 +9900,11 @@ a:focus {
 }
 
 .bg-gradient-primary {
+<<<<<<< HEAD
   background-color: #C70039 !important;
+=======
+  background-color: #4e73df;
+>>>>>>> dev
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover;
 }
