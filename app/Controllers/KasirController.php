@@ -6,20 +6,22 @@ use App\Controllers\BaseController;
 use App\Models\BarangModel;
 use App\Models\JenisModel;
 use App\Models\KeluarModel;
+use App\Models\MerkModel;
 
 class KasirController extends BaseController
 {
 
     public $barangModel;
     public $jenisModel;
-
     public $keluarModel;
+    public $merkModel;
 
     public function __construct()
     {
         $this->barangModel = new BarangModel();
         $this->jenisModel = new JenisModel();
         $this->keluarModel = new KeluarModel();
+        $this->merkModel = new MerkModel();
     }
 
     public function index()
@@ -176,6 +178,9 @@ class KasirController extends BaseController
         $jenisModel = new JenisModel();
         $jenis = $jenisModel->getJenis();
 
+        $merkModel = new MerkModel();
+        $merk = $merkModel->getMerk();
+
         if (session('validation') != null) {
             $validation = session('validation');
         } else {
@@ -185,6 +190,7 @@ class KasirController extends BaseController
         $data = [
             'title' => 'Create keluar',
             'jenis' => $jenis,
+            'merk' => $merk,
             'validation' => $validation,
         ];
 

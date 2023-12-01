@@ -37,10 +37,11 @@
         <div class="mb-3 row">
             <label for="nama_merk" class="col-sm-2 col-form-label">Merk</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control <?= ($validation->hasError('nama_merk')) ? 'is-invalid' : ''; ?>" name="nama_merk" value="<?= old('nama_merk', $keluar['nama_merk'] ?? ''); ?>">
-                <div class="invalid-feedback">
-                    <?= $validation->getError('nama_merk'); ?>
-                </div>
+                <select class="form-select" aria-label="Default select example" id="nama_merk" name="nama_merk">
+                    <?php foreach ($merk as $item) : ?>
+                        <option value="<?= $item['nama_merk'] ?>"><?= $item['nama_merk'] ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
         </div>
 

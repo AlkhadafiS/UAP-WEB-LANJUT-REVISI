@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\BarangModel;
 use App\Models\JenisModel;
 use App\Models\TransaksiModel;
+use App\Models\MerkModel;
 
 class AdminGudangController extends BaseController
 {
@@ -13,12 +14,14 @@ class AdminGudangController extends BaseController
     public $barangModel;
     public $jenisModel;
     public $transaksiModel;
+    public $merkModel;
 
     public function __construct()
     {
         $this->barangModel = new BarangModel();
         $this->jenisModel = new JenisModel();
         $this->transaksiModel = new TransaksiModel();
+        $this->merkModel = new MerkModel();
     }
 
     public function index()
@@ -45,8 +48,10 @@ class AdminGudangController extends BaseController
     {
 
         $jenisModel = new JenisModel();
+        $merkModel = new MerkModel();
 
         $jenis = $jenisModel->getJenis();
+        $merk = $merkModel->getMerk();
 
         if (session('validation') != null) {
             $validation = session('validation');
@@ -57,6 +62,7 @@ class AdminGudangController extends BaseController
         $data = [
             'title' => 'Create Merk',
             'jenis' => $jenis,
+            'merk' => $merk,
             'validation' => $validation
         ];
 
@@ -65,17 +71,20 @@ class AdminGudangController extends BaseController
 
     public function store()
     {
+
         if (!$this->validate([
             'nama_merk' => [
-                'rules' => 'required',
+                'rules' => 'required|is_unique[barang.nama_merk]',
                 'errors' => [
-                    'required' => 'kolom {field} harus di isi.'
+                    'required' => 'Kolom {field} harus di isi.',
+                    'is_unique' => 'Merk sudah ada pada tabel.'
                 ]
             ],
             'stok' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'kolom {field} harus di isi.'
+                    'required' => 'kolom {field} harus di isi.',
+                    'is_unique' => 'Merk ini sudah ada pada table'
                 ]
             ]
         ])) {
@@ -106,10 +115,13 @@ class AdminGudangController extends BaseController
 
         $barang = $this->barangModel->getBarang($id);
         $jenis = $this->jenisModel->getJenis();
+        $merk = $this->merkModel->getMerk();
+
         $data = [
             'title' => 'Edit Merk',
             'barang' => $barang,
             // 'password' => $password,
+            'merk' => $merk,
             'jenis' => $jenis,
             'validation' => \Config\Services::validation()
         ];
@@ -176,6 +188,9 @@ class AdminGudangController extends BaseController
         $jenisModel = new JenisModel();
         $jenis = $jenisModel->getJenis();
 
+        $merkModel = new MerkModel();
+        $merk = $merkModel->getMerk();
+
         if (session('validation') != null) {
             $validation = session('validation');
         } else {
@@ -185,6 +200,7 @@ class AdminGudangController extends BaseController
         $data = [
             'title' => 'Create Transaksi',
             'jenis' => $jenis,
+            'merk' => $merk, // Pastikan variabel $merk dikirim ke view
             'validation' => $validation,
         ];
 
@@ -196,15 +212,15 @@ class AdminGudangController extends BaseController
         if (!$this->validate([
             'nama_merk' => [
                 'rules' => 'required',
-            
+
             ],
             'transaksi' => [
                 'rules' => 'required|numeric',
-                
+
             ],
             'jenis' => [
                 'rules' => 'required',
-                
+
             ],
             'tanggal' => [
                 'rules' => 'required',
@@ -298,10 +314,47 @@ class AdminGudangController extends BaseController
     public function destroyTransaksi($id)
     {
         $result = $this->transaksiModel->deleteTransaksi($id);
-        if (!$result) {
+
+        if ($result) {
+            return redirect()->to(base_url('/transaksi'))->with('success', 'Berhasil menghapus data!');
+        } else {
             return redirect()->back()->with('error', 'Gagal menghapus data');
         }
-        return redirect()->to(base_url('/transaksi'))
-            ->with('success', 'Berhasil menghapus data!');
+    }
+
+    // ...
+
+    public function deleteTransaksi($id)
+    {
+        // Dapatkan data transaksi sebelum menghapusnya
+        $transaksi = $this->transaksiModel->find($id);
+
+        if (!$transaksi) {
+            return redirect()->back()->with('error', 'Transaksi tidak ditemukan.');
+        }
+
+        // Hapus transaksi
+        $result = $this->transaksiModel->deleteTransaksi($id);
+
+        if ($result) {
+            // Perbarui stok di tabel barang
+            $this->updateBarangStockAfterDelete($transaksi);
+            return redirect()->to(base_url('/transaksi'))->with('success', 'Berhasil menghapus data!');
+        } else {
+            return redirect()->back()->with('error', 'Gagal menghapus data');
+        }
+    }
+
+    // Metode untuk memperbarui stok barang setelah menghapus transaksi
+    private function updateBarangStockAfterDelete($transaksi)
+    {
+        $barangModel = new BarangModel();
+        $barang = $barangModel->getBarangByMerkAndJenis($transaksi['nama_merk'], $transaksi['id_jenis']);
+
+        if ($barang) {
+            // Perbarui stok dengan menambahkan kembali jumlah transaksi yang dihapus
+            $updatedStock = $barang['stok'] + $transaksi['transaksi'];
+            $barangModel->updateBarang(['stok' => $updatedStock], $barang['id']);
+        }
     }
 }
